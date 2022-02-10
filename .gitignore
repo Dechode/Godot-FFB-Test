@@ -29,6 +29,7 @@ data_*/
 #misc
 *.a
 #bin
+release/
 *.os
 *.dblite
 *.cbp
