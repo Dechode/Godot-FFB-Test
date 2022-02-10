@@ -1,0 +1,3 @@
+[submodule "godot_ffb_sdl"]
+	path = godot_ffb_sdl
+	url = https://github.com/Dechode/godot_ffb_sdl.git

@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/Main.gd" type="Script" id=1]
+[ext_resource path="res://scripts/native/ffb_nativescript.gdns" type="Script" id=2]
+
+[sub_resource type="Curve" id=1]
+min_value = -1.0
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.25, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.5, 0 ), -5.12, -5.12, 0, 0, Vector2( 0.750407, -1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+ffb_signal_wave = SubResource( 1 )
+
+[node name="AmplitudeLabel" type="Label" parent="."]
+margin_left = 95.294
+margin_top = 232.261
+margin_right = 162.294
+margin_bottom = 246.261
+text = "Amplitude"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AmplitudeSlider" type="HSlider" parent="."]
+margin_left = 73.0
+margin_top = 247.0
+margin_right = 188.0
+margin_bottom = 278.0
+min_value = -1.0
+max_value = 1.0
+step = 0.01
+
+[node name="ffbplugin" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="StartBtn" type="Button" parent="."]
+margin_left = 318.0
+margin_top = 250.0
+margin_right = 365.0
+margin_bottom = 272.0
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StopBtn" type="Button" parent="."]
+margin_left = 379.524
+margin_top = 249.0
+margin_right = 426.524
+margin_bottom = 271.0
+text = "Stop"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="value_changed" from="AmplitudeSlider" to="." method="_on_AmplitudeSlider_value_changed"]
+[connection signal="pressed" from="StartBtn" to="." method="_on_StartBtn_pressed"]
+[connection signal="pressed" from="StopBtn" to="." method="_on_StopBtn_pressed"]
