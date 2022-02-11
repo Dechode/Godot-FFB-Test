@@ -1,11 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://scripts/native/ffb_nativescript.gdns" type="Script" id=2]
-
-[sub_resource type="Curve" id=1]
-min_value = -1.0
-_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.25, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.5, 0 ), -5.12, -5.12, 0, 0, Vector2( 0.750407, -1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -14,7 +10,6 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-ffb_signal_wave = SubResource( 1 )
 
 [node name="AmplitudeLabel" type="Label" parent="."]
 margin_left = 95.294
@@ -22,6 +17,36 @@ margin_top = 232.261
 margin_right = 162.294
 margin_bottom = 246.261
 text = "Amplitude"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NumLabel" type="Label" parent="."]
+margin_left = 194.0
+margin_top = 254.0
+margin_right = 271.0
+margin_bottom = 269.0
+text = "1.0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NumLabel2" type="Label" parent="."]
+margin_left = 46.0
+margin_top = 255.0
+margin_right = 69.0
+margin_bottom = 270.0
+text = "-1.0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentValue" type="Label" parent="."]
+margin_left = 122.0
+margin_top = 283.0
+margin_right = 147.0
+margin_bottom = 298.0
+text = "-1.0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -34,6 +59,9 @@ margin_bottom = 278.0
 min_value = -1.0
 max_value = 1.0
 step = 0.01
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ffbplugin" type="Node" parent="."]
 script = ExtResource( 2 )
