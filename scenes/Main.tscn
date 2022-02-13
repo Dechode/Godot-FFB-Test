@@ -86,26 +86,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 323.0
-margin_top = 163.0
-margin_right = 419.0
-margin_bottom = 213.0
-color = Color( 1, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="ColorRect"]
+[node name="RunningLabel" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -34.0
-margin_top = -7.0
-margin_right = 30.0
-margin_bottom = 7.0
-text = "Is running"
+margin_left = -175.0
+margin_top = -119.0
+margin_right = -111.0
+margin_bottom = -105.0
+text = "Running = "
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="value_changed" from="AmplitudeSlider" to="." method="_on_AmplitudeSlider_value_changed"]
 [connection signal="pressed" from="StartBtn" to="." method="_on_StartBtn_pressed"]
