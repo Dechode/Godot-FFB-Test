@@ -22,11 +22,13 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	amplitude = $AmplitudeSlider.value
+	var length = 0 # 0 for infinite
 	
 	if is_running:
-		if $ffbplugin.update_constant_force_effect(amplitude, 0, effect_id) != 0:
+		if $ffbplugin.update_constant_force_effect(amplitude, length, effect_id) != 0:
 			print("Updating constant force effect failed!")
 			is_running = false
+	
 	$RunningLabel.text = "Running = " + str(is_running)
 
 
