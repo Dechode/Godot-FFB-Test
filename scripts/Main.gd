@@ -11,12 +11,13 @@ var amplitude: float = 0.0
 func _ready() -> void:
 	if $ffbplugin.init_ffb(0) < 0: # Initializes the haptic subsystem for given device id
 		print("Cant initialize haptic subsystem, most likely device not haptic")
-	is_ffb = $ffbplugin.force_feedback
+	else:
+		is_ffb = true #$ffbplugin.force_feedback
 		
 	print("Has force feedback = ",is_ffb)
 	
 	$AmplitudeSlider.value = amplitude
-	$CurrentValue.text = amplitude as String
+	$CurrentValue.text = str(amplitude)
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,7 +35,7 @@ func _process(delta: float) -> void:
 
 func _on_AmplitudeSlider_value_changed(value: float) -> void:
 	amplitude = value
-	$CurrentValue.text = value as String
+	$CurrentValue.text = str(value)
 
 
 func _on_StartBtn_pressed() -> void:
